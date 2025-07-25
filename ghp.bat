@@ -9,3 +9,7 @@ if "%msg%"=="" set msg=updated license and rights
 git commit -m "%msg%"
 
 git push
+
+git log -p --stat
+
+q
