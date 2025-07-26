@@ -10,4 +10,4 @@ git commit -m "%msg%"
 
 git push
 
-git --no-pager log -p --stat
+git --no-pager log -4 -p --stat
