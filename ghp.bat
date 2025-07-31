@@ -2,7 +2,7 @@
 setlocal EnableDelayedExpansion
 
 :: List
-set "repos=FolioFrame BeforeItsPrinted NucleoSuite CforCube VhsicHdl GitPush GitStart PacketVision"
+set "repos=NewRepositoryTemplate BeforeItsPrinted CforCube CO2hI ConfinedandUnbound DriveBack ElixirGate FirForge FolioFrame gabibdods GitPush GitStart GitTorial GrubBurst HashDrill HexRay iMirror LPM NucleoSuite NullVelope PacketVision PlayDuino PowerShield ProtoSwitch RoutePeel Serenio VeilScade VhsicHdl VirtuSetup VSB"
 
 :: Choose
 set "keys="

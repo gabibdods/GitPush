@@ -4,24 +4,24 @@
 
 ### Description
 
-- GitStart is a lightweight batch script developed using Notepad++ that streamlines common Git operations for multiple repositories.
-- It presents an interactive menu to select a project, automatically stages changes, checks status, commits with a custom message, and pushes to both GitHub and GitLab (if configured).
-- Designed for use with the Windows Command Prompt and tested on local environments.
+- GitStart is a lightweight batch script developed using Notepad++ that streamlines common Git operations for multiple repositories
+- It presents an interactive menu to select a project, automatically stages changes, checks status, commits with a custom message, and pushes to both GitHub and GitLab (if configured)
+- Designed for use with the Windows Command Prompt and tested on local environments
 
 ---
 
 ## NOTICE
 
-- Please read through this `README.md` to better understand the project's source code and setup instructions.
-- Also, make sure to review the contents of the `License/` directory.
+- Please read through this `README.md` to better understand the project's source code and setup instructions
+- Also, make sure to review the contents of the `License/` directory
 - Your attention to these details is appreciated — enjoy exploring the project!
 
 ---
 
 ## Problem Statement
 
-- Performing repetitive Git operations across multiple repositories manually can be time-consuming and error-prone, especially when switching between remote origins such as GitHub and GitLab.
-- Developers often forget to verify working tree cleanliness before committing or to include a message, leading to incomplete pushes.
+- Performing repetitive Git operations across multiple repositories manually can be time-consuming and error-prone, especially when switching between remote origins such as GitHub and GitLab
+- Developers often forget to verify working tree cleanliness before committing or to include a message, leading to incomplete pushes
 
 ---
 
@@ -29,11 +29,11 @@
 
 ### Streamline Git Workflow
 
-- Create a script-driven interface that automates the repetitive sequence of staging, committing, and pushing to Git remotes.
+- Create a script-driven interface that automates the repetitive sequence of staging, committing, and pushing to Git remotes
 
 ### Support Multi-Repo & Multi-Remote Projects
 
-- Ensure seamless handling of nested submodules and dual remote targets like GitHub and GitLab.
+- Ensure seamless handling of nested submodules and dual remote targets like GitHub and GitLab
 
 ---
 
@@ -41,15 +41,15 @@
 
 ### Command Prompt (CMD)
 
-- The script is built entirely for use in native Windows terminal environments using standard batch syntax.
+- The script is built entirely for use in native Windows terminal environments using standard batch syntax
 
 ### Notepad++
 
-- Used as the development environment due to its fast syntax highlighting and ease of scripting for .bat files.
+- Used as the development environment due to its fast syntax highlighting and ease of scripting for .bat files
 
 ### Git for Windows
 
-- Git executable must be installed and available in the system's PATH.
+- Git executable must be installed and available in the system's PATH
 
 ---
 
@@ -57,15 +57,15 @@
 
 ### Batch Scripting for Portability
 
-- Chose a `.bat` script to ensure compatibility with any standard Windows installation without requiring third-party software.
+- Chose a `.bat` script to ensure compatibility with any standard Windows installation without requiring third-party software
 
 ### Interactive Menu via choice
 
-- Uses the choice command to generate a compact, user-friendly selection interface for multiple repositories.
+- Uses the choice command to generate a compact, user-friendly selection interface for multiple repositories
 
 ### Smart Remote Detection
 
-- Automatically detects if a `gitlab` remote exists and pushes accordingly after the standard `origin` push.
+- Automatically detects if a `gitlab` remote exists and pushes accordingly after the standard `origin` push
 
 ---
 
@@ -73,15 +73,15 @@
 
 ### Interactive Repo Selection
 
-- Dynamically lists available repositories using an indexed menu for intuitive navigation.
+- Dynamically lists available repositories using an indexed menu for intuitive navigation
 
 ### Commit Sanity Checks
 
-- Verifies that changes exist before prompting for a commit message to avoid unnecessary commits.
+- Verifies that changes exist before prompting for a commit message to avoid unnecessary commits
 
 ### Optional GitLab Push
 
-- Pushes to GitLab only if the `gitlab` remote is explicitly configured, ensuring safe operation across different setups.
+- Pushes to GitLab only if the `gitlab` remote is explicitly configured, ensuring safe operation across different setups
 
 ---
 
@@ -127,12 +127,12 @@
 
 ## Functional Overview
 
-- Launch the script from the command prompt.
-- Select a repository from the interactive list.
-- Automatically navigates to the selected repository folder.
-- Stages all changes and checks for uncommitted work.
-- Prompts the user for a commit message if necessary.
-- Pushes to `origin` and optionally to `gitlab` if configured.
+- Launch the script from the command prompt
+- Select a repository from the interactive list
+- Automatically navigates to the selected repository folder
+- Stages all changes and checks for uncommitted work
+- Prompts the user for a commit message if necessary
+- Pushes to `origin` and optionally to `gitlab` if configured
 
 ---
 
@@ -140,11 +140,11 @@
 
 ### Environment-Specific Paths Abstraction
 
-- Used %USERPROFILE% to generalize repository paths across Windows user profiles.
+- Used %USERPROFILE% to generalize repository paths across Windows user profiles
 
 ### Submodule Path Resolution
 
-- Special handling for `BeforeItsPrinted` ensures the script can correctly access submodule paths nested under `FolioFrame`.
+- Special handling for `BeforeItsPrinted` ensures the script can correctly access submodule paths nested under `FolioFrame`
 
 ---
 
@@ -152,16 +152,16 @@
 
 ### Batch Scripting Can Be Powerful
 
-- With delayed variable expansion and conditional logic, even complex workflows can be automated entirely in `.bat` scripts.
+- With delayed variable expansion and conditional logic, even complex workflows can be automated entirely in `.bat` scripts
 
 ### Git Remote Handling Varies
 
-- It’s critical to detect remotes dynamically to avoid pushing to non-existent remotes or causing push failures.
+- It’s critical to detect remotes dynamically to avoid pushing to non-existent remotes or causing push failures
 
 ---
 
 ## Future Enhancements
 
-- Add support for `git pull` prior to pushing to minimize conflicts.
-- Integrate logging to track commit history and timestamps per repository.
-- Refactor to PowerShell for greater flexibility, cross-platform support, and GUI prompt support.
+- Add support for `git pull` prior to pushing to minimize conflicts
+- Integrate logging to track commit history and timestamps per repository
+- Refactor to PowerShell for greater flexibility, cross-platform support, and GUI prompt support
