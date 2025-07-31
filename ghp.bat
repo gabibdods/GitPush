@@ -2,7 +2,7 @@
 setlocal EnableDelayedExpansion
 
 :: List
-set "repos=FolioFrame BeforeItsPrinted NucleoSuite CforCube VhsicHdl GitPush GitStart"
+set "repos=FolioFrame BeforeItsPrinted NucleoSuite CforCube VhsicHdl GitPush GitStart PacketVision"
 
 :: Choose
 set "keys="
@@ -65,7 +65,7 @@ if "!last!"=="nothing to commit, working tree clean" (
 	if "!msg!"=="" exit 0
 		
 	:: Update repository
-	git commit -m "!msg!"
+	git commit -S -m "!msg!"
 	
 	git push
 	
