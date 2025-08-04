@@ -4,47 +4,52 @@ setlocal EnableDelayedExpansion
 :: List
 set "repos=NewRepositoryTemplate BeforeItsPrinted CforCube CO2hI ConfinedandUnbound DriveBack ElixirGate FirForge FolioFrame gabibdods GitPush GitStart GitTorial GrubBurst HashDrill HexRay iMirror LPM NucleoSuite NullVelope PacketVision PlayDuino PowerShield ProtoSwitch RoutePeel Serenio VeilScade VhsicHdl VirtuSetup VSB"
 
-:: Choose
-set "keys="
+:: Build
 set i=0
 echo.
-echo Repository?
 for %%R in (%repos%) do (
     set /a i+=1
-    set "keys=!keys!!i!"
+    set "repo[!i!]=%%R"
     echo !i!. %%R
 )
+set /a max=%i%
 echo.
 
+:prompt
+set /p sel="Repository? "
+
 :: Verify
-choice /c !keys! /n /m "Select: "
-set "selection=%errorlevel%"
+for /f "delims=0123456789" %%x in ("!sel!") do (
+	echo Invalid input error.
+	goto prompt
+)
+if %sel% lss 1 (
+	echo Out of range error.
+	goto prompt
+)
+if %sel% gtr %max% (
+	echo Out of range error.
+	goto prompt
+)
 
 :: Answer
-set "i=0"
-for %%R in (%repos%) do (
-    set /a i+=1
-    if "!i!"=="%selection%" (
-        set "project=%%R"
-        goto done
-    )
+set "project=!repo[%sel%]!"
+if not defined project (
+	echo Unknown repository error.
+	goto prompt
 )
 
 :: Relocate
-:done
-cd "%USERPROFILE%\_%project%"
-echo Working in %USERPROFILE%\_%project%
-echo.
-
-:: Submodule exception
-if /I "%project%"=="BeforeItsPrinted" (
-
-    echo Submodule detected
-	cd "%USERPROFILE%\_FolioFrame\%project%"
-	echo Working in %USERPROFILE%\_FolioFrame\%project%
-	echo.
-	
+set "target=%USERPROFILE%\Documents\%project%"
+if not exist "%target%" (
+	set /p create="Directory '%target%' does not exist."
 )
+cd /d "%target%" 2>null || (
+	echo Change directory error.
+	exit 1
+)
+echo Working in "%target%"
+echo.
 
 :: .gitignore Sanity test
 git add .
