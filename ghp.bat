@@ -74,7 +74,7 @@ if "!last!"=="nothing to commit, working tree clean" (
 	
 	git push
 	
-	git --no-pager log -4 -p --stat
+	git --no-pager log -2 -p --stat
 )
 
 :: Check for GitLab repo
