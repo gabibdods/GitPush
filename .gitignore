@@ -12,3 +12,4 @@
 # particular repository ignores:
 
 !ghp.bat
+!.gitlab-ci.yml
