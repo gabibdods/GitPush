@@ -2,7 +2,7 @@
 setlocal EnableDelayedExpansion
 
 :: List
-set "repos=NewRepositoryTemplate BeforeItsPrinted CforCube CO2hI ConfinedandUnbound DriveBack ElixirGate FirForge FolioFrame gabibdods GitPush GitStart GitTorial GrubBurst HashDrill HexRay iMirror LPM NucleoSuite NullVelope PacketVision PlayDuino PowerShield ProtoSwitch RoutePeel Serenio VeilScade VhsicHdl VirtuSetup VSB"
+set "repos=BeforeItsPrinted CforCube CO2hI ConfinedandUnbound DriveBack FirForge FolioFrame gabibdods GitPush GitStart GitTorial GitTorrent GrubBurst HashDrill HazeGate HexRay iMirror LPM NewRepositoryTemplate NucleoSuite NullVelope PacketVision PlayDuino PowerShield PrinterPotter ProtoSwitch RoutePeel Serenio TheGrid VeilScade VhsicHdl VirtuSetup VoxMesh VSB"
 
 :: Build
 set i=0
@@ -41,13 +41,6 @@ if not defined project (
 
 :: Relocate
 set "target=%USERPROFILE%\Documents\%project%"
-if not exist "%target%" (
-	set /p create="Directory '%target%' does not exist."
-)
-cd /d "%target%" 2>null || (
-	echo Change directory error.
-	exit 1
-)
 echo Working in "%target%"
 echo.
 
